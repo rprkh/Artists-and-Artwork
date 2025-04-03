@@ -1,0 +1,9 @@
+runtime: nodejs22
+service: default
+
+env_variables:
+  NODE_ENV: "production"
+
+handlers:
+- url: /api/.*
+  script: auto

@@ -1,0 +1,14 @@
+runtime: nodejs22
+env: standard
+
+handlers:
+- url: /assets
+  static_dir: dist/asgn3/browser/assets
+
+- url: /favicon.ico
+  static_files: dist/asgn3/browser/favicon.ico
+  upload: dist/asgn3/browser/favicon.ico
+
+- url: /.*
+  static_files: dist/asgn3/browser/index.html
+  upload: dist/asgn3/browser/index.html

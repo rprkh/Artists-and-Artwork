@@ -1,0 +1,12 @@
+<div class="home-container">
+    <div *ngIf="isLoading">
+      <p class="loading">Loading your profile...</p>
+    </div>
+    
+    <div *ngIf="!isLoading">
+      <h1 *ngIf="userFullname">Welcome {{userFullname}}</h1>
+      <h1 *ngIf="!userFullname">Welcome</h1>
+      <p>You are successfully logged in.</p>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </div>

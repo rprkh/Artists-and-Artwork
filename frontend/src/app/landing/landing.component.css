@@ -1,0 +1,414 @@
+.landing-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.artistic-search-header {
+    color: black;
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    font-size: 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.artistic-search-header .btn-primary {
+    background-color: #f8f9fa;
+    border: none;
+    border-color: none;
+    margin: 0 0px;
+    color: black;
+    transition: all 0.2s ease;
+}
+
+.artistic-search-header .btn-primary:hover {
+    background-color: #003a6b;
+    border: none;
+    border-color: none;
+    color: white;
+}
+
+.artistic-search-header .btn-primary.active {
+    background-color: #004d8f;
+    border: none;
+    border-color: none;
+    color: white;
+}
+
+.artistic-search-header .btn-primary.disabled {
+    background-color: #f8f9fa;
+    border: none;
+    border-color: none;
+    color: black;
+}
+
+#artsy_footer_logo {
+    height: 15px;
+    width: 15px;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+.main-content {
+    align-items: flex-start;
+    padding-top: 50px; /* Fixed distance from the header */
+}
+
+.login-container, .register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 8px;
+}
+
+.account-text {
+    margin-top: 20px; /* Space between card and text */
+    font-size: 14px;
+}
+
+.account-text a {
+    color: #004d8f; /* Match your primary button color */
+    text-decoration: none;
+}
+
+.account-text a:hover {
+    text-decoration: underline;
+}
+
+.form-control:focus {
+    border-color: #004d8f;
+    box-shadow: 0 0 0 0.2rem rgba(0, 77, 143, 0.25);
+}
+
+.btn-primary {
+    background-color: #004d8f;
+    border-color: #004d8f;
+}
+
+.btn-primary:hover {
+    background-color: #003a6b;
+    border-color: #003a6b;
+}
+
+.btn-primary:disabled {
+    background-color: #80b3ff; /* Lighter shade of blue */
+    border-color: #80b3ff;
+    color: #fff; /* White text for contrast */
+}
+
+/* Added styles for search */
+.search-container {
+    width: 100%;
+    max-width: 1100px;
+}
+
+.search-form {
+    width: 100%;
+}
+
+.search-form .form-control {
+    flex-grow: 1;
+    border-right: none; /* Seamless transition to Search button */
+    border-radius: 0px 0px 0px 0px; /* Straight edges */
+}
+
+.search-results .list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Ensure buttons are flush and straight */
+.search-form .btn {
+    border-radius: 0px; /* Straight edges */
+    /* border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; */
+}
+
+.search-form .btn-primary {
+    border: 1px solid #004d8f; /* Consistent border */
+    border-left: none; /* Connect to input */
+    border-right: none; /* Connect to Clear */
+    transition: padding-left 0.3s ease; /* Smooth expansion */
+    display: flex; /* Ensure inline content */
+    align-items: center; /* Vertically center content */
+}
+
+.search-form .btn-primary:disabled {
+    border-color: #80b3ff; /* Match lighter blue */
+}
+
+.search-form .btn-primary.expanded {
+    padding-left: 20px; /* Expand left when spinner is shown */
+}
+
+.search-form .btn-secondary {
+    border: 1px solid #6c757d; /* Consistent border */
+    border-left: none; /* Connect to Search */
+    border-radius: 0px 0px 0px 0px; /* Straight edges */
+}
+
+.search-results {
+    width: 100%;
+}
+
+.result-list {
+    width: 100%;
+    padding-bottom: 10px;
+    display: flex;
+    overflow-x: auto;
+    align-items: flex-start; /* Important: Aligns cards to the top */
+}
+
+.result-card {
+    flex: 0 0 calc(20% - 8px); /* Exactly 5 cards per row */
+    min-width: 0; /* Allow cards to shrink as needed */
+    border-radius: 4px;
+    margin-right: 8px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    cursor: pointer;
+}
+
+.result-card .card-img-top {
+    width: 100%;
+    height: 220px; /* Fixed height for image */
+    object-fit: cover;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    display: block;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.result-card .artist-name {
+    background-color: #1e3a5f;
+    color: #fff;
+    width: 100%;
+    height: 40px; /* Fixed height */
+    padding: 0 15px;
+    display: flex;
+    align-items: center; /* Center text vertically */
+    text-align: left;
+    font-weight: 500;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Show ellipsis for overflow */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Special case for cards with long text */
+.result-card.text-overflow .artist-name {
+    height: auto; /* Allow height expansion only for cards with long text */
+    white-space: normal; /* Allow text to wrap */
+    padding: 8px 15px; /* Adjust padding for wrapped text */
+}
+
+.result-card .artist-name p {
+    margin: 0;
+    font-size: 14px;
+    width: 100%;
+}
+
+.result-card:hover .artist-name {
+    background-color: #004d90 /* New color on hover */
+}
+
+.artist-details {
+    width: 100%;
+    max-width: 1100px; /* Match search-container */
+    margin: 0 auto;
+}
+
+.details-buttons {
+    gap: 0; /* No gap between buttons */
+}
+  
+.detail-btn {
+    width: calc(50% - 4px); /* Span roughly 2.5 cards each */
+    max-width: calc(550px - 4px); /* Half of max-width */
+    border-radius: 0;
+    margin: 0 2px;
+    padding: 10px 0;
+    background-color: #004d8f;
+    border-color: #004d8f;
+}
+  
+.detail-btn:hover {
+    background-color: #003a6b;
+    border-color: #003a6b;
+}
+  
+.detail-btn.active {
+    background-color: #003a6b;
+    border-color: #003a6b;
+}
+  
+.spinner-container {
+    min-height: 50px;
+}
+  
+.details-content {
+    width: 100%;
+}
+  
+.details-content .card {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.artwork-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between items */
+}
+  
+.artwork-item {
+    flex: 0 0 calc(25% - 15px); /* 4 items per row: 25% width minus gap adjustment */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+  
+.artwork-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Full width of artwork-item */
+    height: auto; /* Dynamic height */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Match existing card shadow */
+    border: none;
+    border-radius: 4px; /* Consistent radius */
+    overflow: hidden;
+}
+  
+.artwork-card .card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Expand to fill card */
+    padding: 0; /* No padding around image or content */
+}
+  
+.artwork-img {
+    width: 100%; /* Full width of card */
+    height: auto; /* Variable height */
+    object-fit: cover;
+    border-radius: 4px 4px 0 0; /* Rounded top corners only */
+    margin: 0; /* No margin to align with top */
+}
+
+.artwork-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Push button to bottom */
+    justify-content: space-between; /* Space out text and button */
+}
+  
+.artwork-info p {
+    margin: 15px 15px 15px 15px; /* Padding around text only */
+    flex-grow: 1; /* Allow text to take space */
+}
+  
+.view-categories-btn {
+    width: 100%; /* Full width of card */
+    background-color: #004d8f;
+    border-color: #004d8f;
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-top: auto; /* Stick to bottom */
+    border-radius: 0 0 4px 4px; /* Rounded bottom corners only */
+    margin-bottom: 0; /* No gap below button */
+}
+  
+.view-categories-btn:hover {
+    background-color: #003a6b;
+    border-color: #003a6b;
+}
+
+/* Ensure modal backdrop works correctly */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+}
+  
+.modal {
+    z-index: 1050;
+}
+
+.modal-content {
+    min-height: 550px;
+    border-radius: 8px;
+    padding: 20px; /* Increased padding for larger feel */
+}
+  
+.modal-artwork-img {
+    width: 40px;
+    height: 40px; /* Kept as is, but can increase if needed */
+    object-fit: cover;
+    border-radius: 4px;
+}
+  
+.modal-title {
+    font-size: 1rem;
+    line-height: 1;
+}
+  
+.modal-date {
+    margin-top: 5px;
+    font-size: 1rem;
+    line-height: 1;
+}
+  
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Slightly increased gap for clarity */
+}
+  
+.category-card {
+    flex: 0 0 calc(25% - 15px); /* Exactly 4 per row, adjusted for gap */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Changed to stretch to ensure full width */
+    text-align: center;
+    padding: 0; /* Removed padding to align image with card top */
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); */
+    box-sizing: border-box; /* Ensures padding doesn’t affect width */
+}
+  
+.category-img {
+    width: 100%;
+    height: 200px; /* Original height */
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: 5px;
+}
+  
+.category-name {
+    width: 100%;
+    font-size: 14px;
+    word-wrap: break-word;
+    padding: 10px 5px; /* Added padding here instead of card level */
+}
+  
+/* Optional: Ensure modal-lg is wide enough */
+.modal-lg {
+    max-width: 1000px; /* Increased from Bootstrap default ~800px */
+}
